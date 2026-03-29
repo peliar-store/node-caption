@@ -1,0 +1,22 @@
+{
+  "name": "node-caption",
+  "version": "0.1.0",
+  "description": "Live captions via Whisper ONNX and PulseAudio",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "rebuild": "bash scripts/patch-ffi-napi.sh && electron-rebuild -f -w ffi-napi,ref-napi",
+    "postinstall": "npm run rebuild"
+  },
+  "dependencies": {
+    "ffi-napi": "4.0.3",
+    "ref-napi": "3.0.3",
+    "node-addon-api": "4.3.0",
+    "onnxruntime-node": "^1.21.0",
+    "fft.js": "^4.0.4"
+  },
+  "devDependencies": {
+    "electron": "28.3.3",
+    "@electron/rebuild": "^3.6.0"
+  }
+}
